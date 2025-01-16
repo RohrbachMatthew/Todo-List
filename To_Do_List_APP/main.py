@@ -5,6 +5,8 @@ This program is a simple to_do list
 todo: add comments
 
 todo: update script
+
+todo: Fix "No Task Found" printing for each task. (should only print once)
 """
 
 import json
@@ -49,22 +51,41 @@ class ToDo_List:
             else:
                 status = "Not Done"
             print(f"{status} - {i["Task"]}")
+        print()
 
 def main():
     todo = ToDo_List()
     user = ""
     while user != "4":
-        print("ToDo List:\n")
+        print("\nToDo List:")
         todo.show_tasks()
+        print("1. Add Task\n"
+              "2. Delete Task\n"
+              "3. Mark as Done\n"
+              "4. Exit")
         user = input("Enter your choice: ")
         if user == "1":
-            print("1")
+            task = input("Enter task: ")
+            todo.add_tasks(task)
         elif user == "2":
-            print("2")
+            task = input("Enter task: ")
+            todo.delete_task(task)
         elif user == "3":
-            print("3")
-        elif user == "4":
-            print("4")
-            break
+            task = input("Enter task: ")
+            todo.mark_done(task)
+            task_found = False
+            for t in todo.tasks:
+                if task == t["Task"]:
+                    task_found = True
+                    break
+                if not task_found:
+                    print("No Task Found")
 
-main()
+        elif user == "4":
+            print("Exiting")
+            break
+        else:
+            print("Invalid Choice")
+
+if __name__ == "__main__":
+    main()
