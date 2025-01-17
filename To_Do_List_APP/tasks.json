@@ -1,1 +1,1 @@
-[{"Task": "Laundry", "Done": true}, {"Task": "School work", "Done": false}]
+[{"Task": "Dishes", "Done": false, "Due Date": "N/A", "Notes": "N/A"}, {"Task": "Laundry", "Done": false, "Due Date": "N/A", "Notes": "Do laundry"}, {"Task": "School work", "Done": false, "Due Date": "2025-01-19", "Notes": "Paper is due!"}, {"Task": "Trash", "Done": false, "Due Date": "N/A", "Notes": "Take Trash Out"}, {"Task": "Feed pets", "Done": false, "Due Date": "2025-01-18", "Notes": "N/A"}]
